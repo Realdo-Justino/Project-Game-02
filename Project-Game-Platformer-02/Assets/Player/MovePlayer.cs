@@ -6,7 +6,6 @@ public class MovePlayer : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D Rig;
-    bool Vfalse = false;
     [SerializeField] float VelocidadePersonagem;
     void Start()
     {
@@ -21,10 +20,12 @@ public class MovePlayer : MonoBehaviour
     }
     float MoveH(){
         float movimento=(Input.GetAxis("Horizontal"));
+        if(Input.GetAxis("Vertical")!=0) movimento=movimento*0.75f;
         return movimento;
     }
     float MoveV(){
         float movimento=(Input.GetAxis("Vertical"));
+        if(Input.GetAxis("Horizontal")!=0) movimento=movimento*0.75f;
         return movimento;
     }
 }
