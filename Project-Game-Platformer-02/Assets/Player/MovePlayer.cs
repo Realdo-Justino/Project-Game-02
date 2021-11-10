@@ -13,8 +13,7 @@ public class MovePlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void FixedUpdate(){
         Vector3 player=new Vector3(MoveH(),MoveV(),0f);
         transform.position += player*Time.deltaTime*VelocidadePersonagem;
     }
