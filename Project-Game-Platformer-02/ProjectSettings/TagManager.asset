@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Map
     uniqueID: 3061730047
+    locked: 0
+  - name: Enemys
+    uniqueID: 2021319543
     locked: 0
   - name: Player
     uniqueID: 2425651459
