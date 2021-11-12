@@ -2203,7 +2203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335975883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1736865337}
@@ -11591,6 +11591,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654fefef6a7832a46a8288388ee49887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackRate: 2
+  Weapon1Damage: 40
   AtkRange: 0.5
   Enemylayers:
     serializedVersion: 2
@@ -11606,6 +11608,7 @@ GameObject:
   - component: {fileID: 2026960305}
   - component: {fileID: 2026960304}
   - component: {fileID: 2026960306}
+  - component: {fileID: 2026960307}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -11703,3 +11706,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2026960307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026960303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39894d02a401a1641926029244bd7a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
