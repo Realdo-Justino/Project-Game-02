@@ -11641,7 +11641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackRate: 2
   Weapon1Damage: 40
-  AtkRange: 0.6
+  AtkRange: 0.5
   Enemylayers:
     serializedVersion: 2
     m_Bits: 256
