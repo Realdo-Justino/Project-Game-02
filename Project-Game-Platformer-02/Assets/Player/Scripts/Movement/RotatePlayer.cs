@@ -6,17 +6,10 @@ public class RotatePlayer : MonoBehaviour
 {
     // Start is called before the first frame update
     public float Rotation=0;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    bool Attacking;
     void FixedUpdate(){
+        Attacking=GameObject.Find("Player").GetComponent<AnimationPlayer>().Attacking;
+        //if(Attacking) return;
         Side();
     }
     void Side(){

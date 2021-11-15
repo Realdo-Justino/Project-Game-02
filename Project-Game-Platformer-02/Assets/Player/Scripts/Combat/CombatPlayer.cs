@@ -11,10 +11,12 @@ public class CombatPlayer : MonoBehaviour
     [SerializeField] int Weapon1Damage=40;
     [SerializeField] float AtkRange = 0.5f;
     [SerializeField]LayerMask Enemylayers;
+    AnimationPlayer AnimationPlayer;
     LifeEnemy01 Enemy;
     void Start()
     {
         AtkPoint=GameObject.Find("AtkPoint").GetComponent<Transform>();
+        AnimationPlayer=GetComponent<AnimationPlayer>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class CombatPlayer : MonoBehaviour
     {
         if(Time.time >=NextAttackTime){
             if(Input.GetKeyDown(KeyCode.Space)){
+                AnimationPlayer.Atk();
                 Attack();
                 NextAttackTime=Time.time+1f/AttackRate;
             }

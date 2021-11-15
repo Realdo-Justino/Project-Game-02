@@ -7,6 +7,7 @@ public class MovePlayer : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody2D Rig;
     [SerializeField] float VelocidadePersonagem;
+    bool Attacking;
     void Start()
     {
         Rig=GetComponent<Rigidbody2D>();
@@ -14,6 +15,8 @@ public class MovePlayer : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate(){
+        Attacking=GetComponent<AnimationPlayer>().Attacking;
+        //if(Attacking) return;
         Vector3 player=new Vector3(MoveH(),MoveV(),0f);
         transform.position += player*Time.deltaTime*VelocidadePersonagem;
     }

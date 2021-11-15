@@ -8,6 +8,7 @@ public class AnimationPlayer : MonoBehaviour
     Animator PlayerAnimator;
     RotatePlayer RotatePlayer;
     float x,y;
+    public bool Attacking=false;
     void Start()
     {
         PlayerAnimator=GetComponent<Animator>();
@@ -15,8 +16,10 @@ public class AnimationPlayer : MonoBehaviour
     }
 
     void FixedUpdate(){
+        //if(Attacking) return;
         Move();
         Rotate();
+        
     }
     void Move(){
         x=Input.GetAxisRaw("Horizontal");
@@ -28,8 +31,19 @@ public class AnimationPlayer : MonoBehaviour
         }else PlayerAnimator.SetBool("Moving",false);
     }
     void Rotate(){
-        float valor=RotatePlayer.Rotation;
-        float i=valor/90;
-        PlayerAnimator.SetFloat("Side",i);
+        float valor=RotatePlayer.Rotation/90;
+        PlayerAnimator.SetFloat("Side",valor);
+    }
+    public void Atk(){
+        Attacking=true;
+        float valor=RotatePlayer.Rotation/90;
+        PlayerAnimator.SetFloat("Side",valor);
+        PlayerAnimator.SetBool("Attack",true);
+        StartCoroutine(AttackTimer());
+    }
+    IEnumerator AttackTimer(){
+        yield return new WaitForSeconds(0.01f);
+        Attacking=false;
+        PlayerAnimator.SetBool("Attack",false);
     }
 }
