@@ -21,7 +21,6 @@ public class CombatPlayer : MonoBehaviour
     void Update()
     {
         if(Time.time >=NextAttackTime){
-            Debug.Log("oi");
             if(Input.GetKeyDown(KeyCode.Space)){
                 Attack();
                 NextAttackTime=Time.time+1f/AttackRate;

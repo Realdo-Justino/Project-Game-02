@@ -17,12 +17,12 @@ public class MovePlayer : MonoBehaviour
         Vector3 player=new Vector3(MoveH(),MoveV(),0f);
         transform.position += player*Time.deltaTime*VelocidadePersonagem;
     }
-    float MoveH(){
+    public float MoveH(){
         float movimento=(Input.GetAxis("Horizontal"));
         if(Input.GetAxis("Vertical")!=0) movimento=movimento*0.75f;
         return movimento;
     }
-    float MoveV(){
+    public float MoveV(){
         float movimento=(Input.GetAxis("Vertical"));
         if(Input.GetAxis("Horizontal")!=0) movimento=movimento*0.75f;
         return movimento;

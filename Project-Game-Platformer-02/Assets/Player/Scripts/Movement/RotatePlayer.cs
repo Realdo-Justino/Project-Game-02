@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotatePlayer : MonoBehaviour
 {
     // Start is called before the first frame update
+    public float Rotation=0;
     void Start()
     {
         
@@ -21,10 +22,11 @@ public class RotatePlayer : MonoBehaviour
     void Side(){
         float SideH=Mathf.RoundToInt(Input.GetAxis("Horizontal"));
         float SideV=Mathf.RoundToInt(Input.GetAxis("Vertical"));
-        transform.eulerAngles=new Vector3(0f,0f,SideValue(SideH,SideV));
+        Rotation=SideValue(SideH,SideV);
+        transform.eulerAngles=new Vector3(0f,0f,Rotation);
         
     }
-    float SideValue(float SideH, float SideV){
+    public float SideValue(float SideH, float SideV){
         float posicao=transform.rotation.eulerAngles.z;
         if(SideH>0){
             posicao=0;
