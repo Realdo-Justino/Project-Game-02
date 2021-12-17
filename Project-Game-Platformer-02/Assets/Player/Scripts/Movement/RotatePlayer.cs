@@ -7,14 +7,16 @@ public class RotatePlayer : MonoBehaviour
     // Start is called before the first frame update
     public float Rotation=0;
     bool Attacking;
+    Vector2 RotationMove;
+    
     void FixedUpdate(){
         Attacking=GameObject.Find("Player").GetComponent<AnimationPlayer>().Attacking;
         //if(Attacking) return;
         Side();
     }
     void Side(){
-        float SideH=Mathf.RoundToInt(Input.GetAxis("Horizontal"));
-        float SideV=Mathf.RoundToInt(Input.GetAxis("Vertical"));
+        float SideH=(Input.GetAxisRaw("Horizontal"));
+        float SideV=(Input.GetAxisRaw("Vertical"));
         Rotation=SideValue(SideH,SideV);
         transform.eulerAngles=new Vector3(0f,0f,Rotation);
         

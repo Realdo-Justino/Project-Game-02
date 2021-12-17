@@ -8,6 +8,7 @@ public class MovePlayer : MonoBehaviour
     Rigidbody2D Rig;
     [SerializeField] float VelocidadePersonagem;
     bool Attacking;
+    
     void Start()
     {
         Rig=GetComponent<Rigidbody2D>();
